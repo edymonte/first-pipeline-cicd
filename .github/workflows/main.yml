@@ -34,7 +34,13 @@ jobs:
           with:
             method: kubeconfig
             kubeconfig: ${{ secrets.K8S_CONFIG }}
-            context: <context name> # current-context from kubeconfig is used as default
+        - name: Execução do Manifesto
+          uses: Azure/k8s-deploy@v5
+          with:
+            manifests: |
+              ./k8s/deployment.yaml
+            images: |
+              edymonte/aula-primeira-pipeline:v${{ github.run_number }}
         
       
      
