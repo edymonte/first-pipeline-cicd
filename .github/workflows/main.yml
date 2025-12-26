@@ -23,6 +23,15 @@ jobs:
         tags: | 
           edymonte/aula-primeira-pipeline:v${{ github.run_number }} 
           edymonte/aula-primeira-pipeline:latest 
+  CD:
+    runs-on: ubuntu-latest
+    needs: ["CI"]
+    steps:
+        -  name: Obtendo o codigo
+           uses: actions/checkout@v6
+        - name: Configuration of context Kubernetes
+        
+      
      
        
       
