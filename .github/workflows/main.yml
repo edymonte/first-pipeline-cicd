@@ -30,6 +30,11 @@ jobs:
         -  name: Obtendo o codigo
            uses: actions/checkout@v6
         - name: Configuration of context Kubernetes
+          uses: Azure/k8s-set-context@v4.0.2
+          with:
+            method: kubeconfig
+            kubeconfig: ${{ secrets.K8S_CONFIG }}
+            context: <context name> # current-context from kubeconfig is used as default
         
       
      
