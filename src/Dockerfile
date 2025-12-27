@@ -9,4 +9,6 @@ USER appuser
 WORKDIR /app
 COPY --from=builder --chown=appuser:appuser /build/app .
 EXPOSE 5000
+
 CMD [ "./app" ]
+###################
